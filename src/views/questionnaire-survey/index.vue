@@ -210,7 +210,6 @@ const clone = (element: any) => {
   el.id = snowflake.generate();
   return el;
 };
-
 </script>
 
 <style scoped lang="scss">
