@@ -1,0 +1,80 @@
+$breakpoints: (
+  "phone": (
+    320px,
+    480px,
+  ),
+  "pad": (
+    481px,
+    768px,
+  ),
+  "notebook": (
+    769px,
+    1024px,
+  ),
+  "desktop": (
+    1025px,
+    1200px,
+  ),
+  "tv": 1201px,
+);
+
+@mixin respond-to($breakname) {
+  $bp: map-get($breakpoints, $breakname);
+  @if type-of($bp) == "list" {
+    $min: nth($bp, 1);
+    $max: nth($bp, 2);
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $bp) {
+      @content;
+    }
+  }
+}
+
+// 全局PC端背景色
+$global-bg-color: #edf4f9;
+// 全局PC端宽度
+$global-pc-width: var(--global-pc-main-width);
+// 全局手机端块间隔背景色
+$global-interval-bg-color: #f2f2f2;
+
+:root {
+  // theme: primary
+  --td-brand-color-7: #2866ff;
+  --td-brand-color-8: #377dff;
+  // theme: warning
+  --td-warning-color-5: #ff8628;
+  --td-warning-color-6: #fdefe5;
+  // theme: success
+  --td-success-color-5: #1fc484;
+  --td-success-color-6: #06dfc2;
+  // theme: error
+  --td-error-color-6: #ff3939;
+  --td-error-color-7: #fc6b57;
+
+  /* 整个滚动条 */
+  .scroll-bar-content::-webkit-scrollbar {
+    width: 5px; /* 水平滚动条的高度，垂直滚动条的宽度 */
+    height: 2px; /* 垂直滚动条的高度 */
+  }
+
+  /* 滚动条轨道 */
+  .scroll-bar-content::-webkit-scrollbar-track {
+    background: #fff; /* 轨道的颜色 */
+    border-radius: 10px; /* 轨道的圆角 */
+  }
+
+  /* 滚动条的滑块 */
+  .scroll-bar-content::-webkit-scrollbar-thumb {
+    background: #ebeef5; /* 滑块的颜色 */
+    border-radius: 10px; /* 滑块的圆角 */
+  }
+
+  /* 滚动条的滑块：悬浮 */
+  .scroll-bar-content::-webkit-scrollbar-thumb:hover {
+    background: #e4e7ed; /* 滑块悬浮时的颜色 */
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,353 @@
+.edit-box {
+  overflow: hidden;
+
+  .sortable-chosen {
+    // border: 1px dashed var(--td-success-color-5);
+    border-radius: 2px;
+    background-color: #eaf2fd;
+    width: 100%;
+    color: var(--td-brand-color-8);
+    font-size: 14px;
+  }
+
+  .sortable-drag {
+    border: 1px solid #dcdcdc;
+
+    &:hover {
+      border: 1px dashed var(--td-success-color-5);
+      color: var(--td-success-color-5);
+    }
+  }
+
+  .left {
+    width: 140px;
+    height: 100%;
+    background-color: #fff;
+    padding: 8px;
+    overflow-y: auto;
+
+    .form-item {
+      border: 1px solid #dcdcdc;
+
+      &:hover {
+        border: 1px dashed var(--td-success-color-5);
+        color: var(--td-success-color-5);
+      }
+
+      .icon {
+        font-size: 16px;
+      }
+      .label {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .middle {
+    flex: 1;
+    padding: 8px 16px;
+    background-color: #fff;
+    overflow-y: auto;
+
+    .el-pc-view-form-box {
+      border: 1px dashed rgba(0, 0, 0, 0.2);
+      position: relative;
+
+      &::after {
+        content: "从左侧拖拽来添加字段";
+        font-size: 14px;
+        color: #838892;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .el-mobile-view-form-box {
+      border: 1px dashed rgba(0, 0, 0, 0.2);
+      position: relative;
+
+      &::after {
+        content: "点击右下角悬浮按钮来添加字段，添加后点击标题区域进行字段设置";
+        width: 100%;
+        padding: 0 32px;
+        font-size: 14px;
+        color: #838892;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .view {
+      $new-color: rgba(0, 0, 0, 0);
+
+      .view-item {
+        &:hover {
+          background-color: #f5f6f8;
+        }
+      }
+      .item-active {
+        background-color: #eaf2fd;
+      }
+
+      .list-form-item {
+        .label {
+          color: #000;
+          width: calc(100% - 120px);
+        }
+
+        .desc {
+          color: #666;
+        }
+
+        .edit-btn-box {
+          width: 120px;
+
+          .mobile-icon {
+            font-size: 15px;
+            font-weight: bold;
+          }
+        }
+
+        .radio {
+          --td-radio-bg-color: $new-color;
+          --td-radio-border-color: $new-color;
+          --td-radio-icon-disabled-bg-color: #fff;
+          --td-radio-icon-disabled-color: #fff;
+          --td-radio-label-disabled-color: #333;
+        }
+
+        .checkBox {
+          --td-checkbox-bg-color: $new-color;
+          --td-checkbox-border-color: $new-color;
+          --td-checkbox-title-disabled-color: #333;
+          --td-checkbox-icon-disabled-bg-color: #fff;
+          --td-checkbox-icon-disabled-color: #fff;
+        }
+
+        .numberSelect {
+          .number-box {
+            --td-slider-active-color: var(--td-brand-color-7);
+            --td-slider-disabled-color: var(--td-brand-color-7);
+            --td-slider-disabled-text-color: #333;
+          }
+        }
+
+        .textarea {
+          .textarea-input {
+            --td-textarea-disabled-text-color: #333;
+          }
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 230px;
+    height: 100%;
+    background-color: #fff;
+    overflow-y: auto;
+  }
+}
+
+.mobile-box {
+  .middle {
+    .view {
+      .list-form-item {
+        .label {
+          font-size: 14px;
+        }
+
+        .desc {
+          font-size: 11px;
+        }
+
+        .radio {
+          --td-radio-font-size: 13px;
+          --td-radio-vertical-padding: 2px;
+
+          :deep(.t-radio__icon-circle) {
+            width: 28px;
+            height: 28px;
+          }
+
+          :deep(.t-radio__icon--left) {
+            margin-right: 1px;
+          }
+        }
+
+        .checkBox {
+          --td-checkbox-font-size: 13px;
+          --td-checkbox-vertical-padding: 2px;
+
+          :deep(.t-checkbox__icon-circle) {
+            width: 28px;
+            height: 28px;
+          }
+
+          :deep(.t-checkbox__icon--left) {
+            margin-right: 1px;
+          }
+        }
+
+        .textarea {
+          .textarea-input {
+            --td-textarea-padding: 4px;
+            --td-font-size-m: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.pc-box {
+  .middle {
+    margin: 0 8px;
+
+    .view {
+      .list-form-item {
+        .label {
+          font-size: 15px;
+        }
+
+        .desc {
+          font-size: 12px;
+        }
+
+        .radio {
+          --td-radio-font-size: 14px;
+          --td-radio-vertical-padding: 4px;
+
+          :deep(.t-radio__icon-circle) {
+            width: 32px;
+            height: 32px;
+          }
+
+          :deep(.t-radio__icon--left) {
+            margin-right: 4px;
+          }
+        }
+
+        .checkBox {
+          --td-checkbox-font-size: 14px;
+          --td-checkbox-vertical-padding: 4px;
+
+          :deep(.t-checkbox__icon-circle) {
+            width: 32px;
+            height: 32px;
+          }
+
+          :deep(.t-checkbox__icon--left) {
+            margin-right: 4px;
+          }
+        }
+
+        .textarea {
+          .textarea-input {
+            --td-textarea-padding: 6px;
+            --td-font-size-m: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobile-popup {
+  width: 100%;
+  height: 300px;
+
+  .popup-title {
+    height: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid $global-interval-bg-color;
+  }
+
+  .form-item {
+    border: 1px solid #dcdcdc;
+    // width: calc((100% - 24px) / 2);
+    font-size: 15px;
+
+    &:hover {
+      border: 1px dashed var(--td-success-color-5);
+      color: var(--td-success-color-5);
+    }
+
+    .icon {
+      font-size: 20px;
+    }
+  }
+}
+
+.validate-popup {
+  height: 90vh;
+  position: relative;
+
+  .setting {
+    width: 100%;
+    height: 44px;
+    line-height: 44px;
+    font-size: 15px;
+    font-weight: bold;
+    padding-left: 16px;
+    margin-bottom: 16px;
+    color: var(--td-success-color-5);
+    border-bottom: 1px solid var(--td-success-color-5);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .view-box {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    width: 100%;
+    overflow-y: auto;
+    height: calc(90vh - 45px - 66px);
+  }
+
+  .validate {
+    width: 100%;
+    height: 60px;
+    padding: 0 24px;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+
+    .validate-btn {
+      width: 100%;
+      height: 45px;
+      background-color: var(--td-success-color-5);
+      font-size: 16px;
+      color: #fff;
+      font-weight: 700;
+      border-radius: 6px;
+    }
+  }
+}
+
+.t-fab {
+  :deep(.t-button--primary) {
+    background-color: var(--td-success-color-5);
+
+    &::after {
+      border-color: var(--td-success-color-5);
+    }
+  }
+
+  :deep(.t-button--primary.t-button--hover::after) {
+    background-color: var(--td-success-color-5);
+
+    &::after {
+      border-color: var(--td-success-color-5);
+    }
+  }
+}
